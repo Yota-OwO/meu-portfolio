@@ -1,0 +1,88 @@
+/* Cada cartão recebe uma cor diferente via nth-child */
+.cartao {
+  background: #ffffff;
+  border: 1px solid #e8e5de;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Barra colorida no topo de cada cartão */
+.cartao:nth-child(1)::before { background: #1D9E75; }
+.cartao:nth-child(2)::before { background: #7F77DD; }
+.cartao:nth-child(3)::before { background: #D85A30; }
+
+.cartao::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.cartao-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 14px;
+  background: #f0f0ea;
+  color: #444;
+}
+
+.cartao:nth-child(1) .cartao-avatar { background: #E1F5EE; color: #0F6E56; }
+.cartao:nth-child(2) .cartao-avatar { background: #EEEDFE; color: #3C3489; }
+.cartao:nth-child(3) .cartao-avatar { background: #FAECE7; color: #993C1D; }
+
+.cartao-nome {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.cartao-profissao {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+  color: #888;
+}
+
+.cartao:nth-child(1) .cartao-profissao { color: #0F6E56; }
+.cartao:nth-child(2) .cartao-profissao { color: #3C3489; }
+.cartao:nth-child(3) .cartao-profissao { color: #993C1D; }
+
+.cartao-cidade {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 14px;
+}
+
+.cartao-frase {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+  border-left: 2px solid #e0ddd5;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.cartao:nth-child(1) .cartao-frase { border-color: #1D9E75; }
+.cartao:nth-child(2) .cartao-frase { border-color: #7F77DD; }
+.cartao:nth-child(3) .cartao-frase { border-color: #D85A30; }
